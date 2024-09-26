@@ -32,21 +32,21 @@ export function calculateStringExpression(stringExpression: string): number {
     });
 
     return sum(operands);
-  } else {
-    const regex = new RegExp(/[,|;]/);
-    const operands = stringExpression.split(regex).map((operand) => {
-      const transformed = Number(operand);
-      if (isNaN(transformed)) {
-        throw new Error('Invalid operand');
-      }
-
-      if (transformed < 0) {
-        throw new Error('Negative operand');
-      }
-
-      return transformed;
-    });
-
-    return sum(operands);
   }
+
+  const regex = new RegExp(/[,|;]/);
+  const operands = stringExpression.split(regex).map((operand) => {
+    const transformed = Number(operand);
+    if (isNaN(transformed)) {
+      throw new Error('Invalid operand');
+    }
+
+    if (transformed < 0) {
+      throw new Error('Negative operand');
+    }
+
+    return transformed;
+  });
+
+  return sum(operands);
 }
