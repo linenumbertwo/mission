@@ -1,4 +1,4 @@
-import { Calculator } from '../simple-calculator';
+import { Calculator } from '../simple-calculator/calculator';
 
 describe('simple-calculator', () => {
   const calculator = new Calculator();
@@ -18,7 +18,7 @@ describe('simple-calculator', () => {
   it('곱하기가 잘 되는가', () => {
     expect(calculator.multiply(1, 2)).toBe(2);
     expect(calculator.multiply(123, 321)).toBe(39483);
-    expect(calculator.multiply(123, 0)).toBe(1);
+    expect(calculator.multiply(123, 0)).toBe(0);
   });
 
   it('나누기가 잘 되는가', () => {
